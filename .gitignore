@@ -24,6 +24,9 @@ instant-mcp
 *.swo
 *~
 
+# Docs (planning/ideation)
+docs/
+
 # Logs
 *.log
 
