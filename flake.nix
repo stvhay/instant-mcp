@@ -18,10 +18,14 @@
         {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
-              # Add packages here
+              go             # Latest stable Go
+              gopls          # Go language server
+              gotools        # goimports, etc.
+              golangci-lint  # Linter
             ];
             shellHook = ''
-              true
+              echo "instant-mcp development environment loaded"
+              echo "Go version: $(go version)"
             '';
           };
         });

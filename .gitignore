@@ -12,6 +12,7 @@
 
 # Build artifacts
 dist/
+instant-mcp
 
 # MCP
 .mcp.json
