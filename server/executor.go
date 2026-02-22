@@ -76,12 +76,10 @@ func Execute(cmd models.Command, args map[string]any) (string, error) {
 func buildArgs(cmd models.Command, args map[string]any) []string {
 	var result []string
 	for argName, val := range args {
-		// Only include args that are defined in the command spec
 		if _, defined := cmd.Args[argName]; !defined {
 			continue
 		}
 		result = append(result, argToString(val))
-		_ = argName // arg name not used as flag, just positional for now
 	}
 	return result
 }
