@@ -44,11 +44,6 @@ func main() {
 	statePath := getStateFilePath(*stateFile)
 	log.Printf("State file: %s", statePath)
 
-	stateDir := filepath.Dir(statePath)
-	if err := os.MkdirAll(stateDir, 0755); err != nil {
-		log.Fatalf("Failed to create state directory: %v", err)
-	}
-
 	srv := server.NewServer(name, version, statePath)
 	if err := srv.LoadState(); err != nil {
 		log.Printf("Warning: failed to load state: %v", err)
