@@ -120,7 +120,9 @@ func (s *Server) handleInitialize(msg *JSONRPCMessage) error {
 	result := InitializeResult{
 		ProtocolVersion: "2024-11-05",
 		Capabilities: Capabilities{
-			Tools: map[string]any{},
+			Tools: map[string]any{
+				"listChanged": true,
+			},
 		},
 		ServerInfo: ServerInfo{
 			Name:    s.name,
